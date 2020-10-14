@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {RecipeCollection} from '../../models/RecipeCollection';
 import {RecipeGetResponse} from '../../models/RecipeGetResponse';
@@ -6,7 +6,6 @@ import {RecipeRequest} from '../../models/RecipeRequest';
 import {RecipeService} from '../../services/recipe.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {ConfirmDialogModel} from '../../models/ConfirmDialogModel';
-import {tap} from 'rxjs/operators';
 import {MatDialog} from '@angular/material/dialog';
 import {ConfirmDialogComponent} from '../confirm-dialog/confirm-dialog.component';
 

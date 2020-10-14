@@ -55,11 +55,19 @@
     <!--      <p>Collection name: {{getRecipeCollectionName(collectionId)}}</p>-->
     <!--    </div>-->
     <mat-form-field appearance="fill">
-      <select matNativeControl id="listSelect" (change)="addNormalizedItemsToShoppingList($event.target.value)">
-        <option disabled selected>Add ingredients to list</option>
+      <select matNativeControl id="listSelect" (change)="addNormalizedItemsToShoppingList($event.target.value)"
+              placeholder="Add ingredients to list">
+<!--        <option selected>Add ingredients to list</option>-->
         <option *ngFor="let list of lists" [value]="list.id">{{list.name}}</option>
       </select>
     </mat-form-field>
+
+<!--    ng update @angular/cdk-->
+<!--    @angular/cli                       9.0.7 -> 10.1.6          ng update @angular/cli-->
+<!--    @angular/core                      9.0.7 -> 10.1.5          ng update @angular/core-->
+<!--    @angular/material                  9.2.4 -> 10.2.4          ng update @angular/material-->
+<!--    rxjs                               6.5.5 -> 6.6.3           ng update rxjs-->
+
     <br>
 <!--    <mat-form-field appearance="fill">-->
 <!--      <mat-select id="listSelect" placeholder="Add ingredients to list" (valueChange)="addNormalizedItemsToShoppingList($event.target.value)">-->

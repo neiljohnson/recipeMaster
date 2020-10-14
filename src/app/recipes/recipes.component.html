@@ -33,6 +33,10 @@
     <mat-form-field appearance="outline">
       <input matInput placeholder="search recipes" name="searchRecipe" type="text" (change)="filter($event)"
              [(ngModel)]="searchTerm">
+    </mat-form-field><
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="add URL" name="addUrl" type="text" (blur)="extractRecipe($event.target.value)"
+             [(ngModel)]="searchTerm">
     </mat-form-field>
     <button mat-stroked-button color="primary" [class.active]="" (click)="filter('all')">
       <mat-icon>search</mat-icon>
