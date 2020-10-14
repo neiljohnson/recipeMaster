@@ -124,4 +124,11 @@ export class RecipesComponent implements OnInit {
     return this.recipeCollections.find((collection) => collection.collection.id === id).collection.name;
   }
 
+  extractRecipe(url: string): void {
+    this.recipeService.extractRecipe(url).subscribe(response => {
+      const recipeGetResponse = new RecipeGetResponse();
+      recipeGetResponse.recipe = response.partially_parsed;
+      this.snackBar.open("Successfully extracted recipe from URL " + url, "OK", {duration: 3000});
+    });
+  }
 }

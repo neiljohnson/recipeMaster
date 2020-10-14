@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {environment} from '../environments/environment';
 import {RecipeCollectionParent} from '../models/RecipeCollection';
 import {RecipeGetResponse} from '../models/RecipeGetResponse';
+import {RecipeScrape} from '../models/RecipeScrape';
 
 @Injectable({
   providedIn: 'root'
@@ -55,5 +56,12 @@ export class RecipeService {
       reader.onload = () => resolve(reader.result);
       reader.onerror = error => reject(error);
     }));
+  }
+
+  extractRecipe(url: string): Observable<any> {
+    const recipeScrape = new RecipeScrape();
+    recipeScrape.url = url;
+    recipeScrape.recipe_mask.paths = ["normalized_ingredients", "instructions"];
+    return this.httpClient.post<any>(environment.recipeExtractUrl, recipeScrape);
   }
 }

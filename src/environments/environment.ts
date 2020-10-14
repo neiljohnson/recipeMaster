@@ -24,6 +24,7 @@ export const environment = {
   // RECIPES
   //recipeUrl: 'https://graph.whisk.com/v1/recipes/',
   recipeUrl: 'https://my.whisk.com/api/grpc/v1/recipes',
+  recipeExtractUrl: 'https://my.whisk.com/api/grpc/v1/recipes/extract',
   getRecipeUrl: 'https://my.whisk.com/api/grpc/v1/recipes/{:id}?recipe_mask.paths=normalized_ingredients&recipe_mask.paths=instructions&recipe_mask.paths=nutrition',
   recipeCollectionsUrl: 'https://my.whisk.com/api/grpc/v1/collections',
   addListItemUrl: 'https://graph.whisk.com/v1/lists/:listId/items',
