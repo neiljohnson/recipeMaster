@@ -1,0 +1,103 @@
+<!--<mat-autocomplete #auto="matAutocomplete">-->
+<!--  <mat-option *ngFor="let product of autocompleteProducts" [value]="product">-->
+<!--    {{product}}-->
+<!--  </mat-option>-->
+<!--</mat-autocomplete>-->
+
+<!--<form>-->
+<!--  <mat-form-field  class="container" appearance="outline">-->
+
+<!--    &lt;!&ndash; ADD AN INPUT BOX OF TYPE TEXT AND LINK IT TO THE AUTO COMPLETE PANEL. &ndash;&gt;-->
+<!--    <input type="text" placeholder="Add items" style="width: 400px"-->
+<!--           matInput-->
+<!--           [formControl]="searchTerm"-->
+<!--           [matAutocomplete]="auto">-->
+
+<!--    &lt;!&ndash; CREATE AUTO COMPLETE PANEL WITH OPTIONS. &ndash;&gt;-->
+<!--    <mat-autocomplete  #auto="matAutocomplete">-->
+<!--      <mat-option *ngFor="let product of autocompleteProducts" [value]="product.name">-->
+<!--        {{product.displayName}} {{product.imageUrl}}-->
+<!--      </mat-option>-->
+<!--    </mat-autocomplete>-->
+
+<!--  </mat-form-field>-->
+<!--</form>-->
+
+<!--<mat-form-field>-->
+<!--  <input type="text" placeholder="Search" (change)="filterItems($event)">-->
+<!--</mat-form-field>-->
+
+<div class="ng-autocomplete">
+  <ng-autocomplete #auto
+    [data]="autocompleteProducts"
+    [searchKeyword]="selected"
+    placeHolder="Add item"
+    historyIdentifier="products"
+    (selected)="onSelect($event)"
+    (inputChanged)="onChangeSearch($event)"
+    [itemTemplate]="itemTemplate"
+    [notFoundTemplate]="notFoundTemplate">
+  </ng-autocomplete>
+
+  <ng-template #itemTemplate let-item>
+    <div class="item">
+      <img src="{{item.imageUrl}}">
+      <span [innerHTML]="item.displayName"></span>
+    </div>
+  </ng-template>
+
+  <ng-template #notFoundTemplate let-notFound>
+    <div [innerHTML]="notFound"></div>
+  </ng-template>
+</div>
+
+<div class="item" *ngFor="let item of pantry.items">
+  <div *ngIf="item.imageUrl">
+    <img [src]="item.imageUrl">
+  </div>
+  <div *ngIf="!item.imageUrl">
+    <img mat-card-image *ngIf="!item.imageUrl"
+         src="https://asaanrecipes.com/wp-content/themes/asaan_recipes/assets/img/placeholder.jpg">
+  </div>
+  <span [innerHTML]="item.name"> </span> | {{item.analysis?.category?.name}} | {{findLocation(item)}} | {{item.quantity}} |
+  {{item.count}} | {{item.updatedAt * 1000 | date}}
+  <mat-icon (click)="delete(item)">close</mat-icon>
+  <button matInput mat-button (click)="addItem('', item)">Add to Shopping List</button>
+</div>
+
+
+<!--<ul class="heroes" *ngFor="let item of pantry.items">-->
+<!--  <li>-->
+<!--    <span class="badge"><img [src]="item.imageUrl"/> {{item.name}}</span> | {{item.analysis.category.name}}-->
+<!--  </li>-->
+<!--</ul>-->
+
+<!--<form #pantryForm="ngForm">-->
+
+<!--  <mat-card class="shipping-card">-->
+<!--    <mat-card-header>-->
+<!--      <mat-card-title>Pantry</mat-card-title>-->
+<!--    </mat-card-header>-->
+
+<!--    -->
+
+<!--    <mat-card-content>-->
+<!--      <div class="row">-->
+<!--        <div class="col">-->
+<!--          <mat-form-field appearance="outline">-->
+<!--            <input matInput placeholder="Add Item" />-->
+<!--          </mat-form-field>-->
+<!--&lt;!&ndash;          <mat-form-field>&ndash;&gt;-->
+<!--&lt;!&ndash;            <button mat-button (click)="onSubmit($event)">Add</button> todo autocomplete here &ndash;&gt;-->
+<!--&lt;!&ndash;          </mat-form-field>&ndash;&gt;-->
+<!--          <mat-form-field appearance="outline">-->
+<!--            <button matInput mat-button (click)="onSubmit($event)">Add</button>-->
+<!--          </mat-form-field>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </mat-card-content>-->
+<!--    <ul *ngFor="let item of pantry.items">-->
+<!--      <li><img [src]="item.imageUrl" width="40px" [alt]="item.imageUrl"/>name: {{item.name}}, count: {{item.count}}, category: {{item.analysis.category.name}}</li>-->
+<!--    </ul>-->
+<!--  </mat-card>-->
+<!--</form>-->

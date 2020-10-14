@@ -1,0 +1,75 @@
+<mat-card class="shipping-card">
+  <mat-card-header>
+    <mat-card-title>
+      <button mat-stroked-button color="secondary" (click)="onBackButtonClicked()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      {{recipe.recipe.name}}
+    </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image *ngIf="recipe.recipe.images[0].responsive.url" [src]="recipe.recipe.images[0].responsive.url">
+  <mat-card-content>
+    <p>{{recipe.recipe.description}}</p>
+    <p><b>Source:</b> {{recipe.recipe.source.display_name}}</p>
+    <p><b>Servings:</b> {{recipe.recipe.servings}}</p>
+    <p>
+      <mat-icon>access_alarm</mat-icon>
+      <b>Cook:</b> {{recipe.recipe.durations?.cook_time || 0}} &nbsp;&nbsp;&nbsp;
+      <mat-icon>timelapse</mat-icon>
+      <b>Prep:</b> {{recipe.recipe.durations?.prep_time || 0}}</p>
+    <p><b>Ingredients</b></p>
+    <div class="item" *ngFor="let item of recipe.recipe.normalized_ingredients">
+      <div *ngIf="item.analysis.image_url">
+        <img [src]="item.analysis.image_url">
+      </div>
+      <div *ngIf="!item.analysis.image_url">
+        <img mat-card-image *ngIf="!item.analysis.image_url"
+             src="https://asaanrecipes.com/wp-content/themes/asaan_recipes/assets/img/placeholder.jpg">
+      </div>
+      <span
+        innerHTML="<b>{{item.analysis?.quantity}} {{item.analysis.unit}}</b> {{item.analysis.product.original_name}}, {{item.analysis.comment}}"> </span>
+
+      <!--      <mat-icon (click)="delete(item)">close</mat-icon>-->
+      <!--      <button matInput mat-button (click)="addItemToShoppingList('', item)">Add to Shopping List</button>-->
+    </div>
+    <!--    <div class="item" *ngFor="let item of recipe.recipe.normalized_ingredients">-->
+    <!--      <div *ngIf="item.analysis.image_url">-->
+    <!--        <img [src]="item.analysis.image_url">-->
+    <!--      </div>-->
+    <!--      <div *ngIf="!item.analysis.image_url">-->
+    <!--        <img mat-card-image *ngIf="!item.analysis.image_url"-->
+    <!--             src="https://asaanrecipes.com/wp-content/themes/asaan_recipes/assets/img/placeholder.jpg">-->
+    <!--      </div>-->
+    <!--      <span [innerHTML]="item.analysis.product.original_name"> </span> | {{item.analysis?.category?.canonical_name}} |-->
+    <!--      {{findLocation(item)}}-->
+    <!--      <mat-icon (click)="delete(item)">close</mat-icon>-->
+    <!--      <button matInput mat-button (click)="addItemToShoppingList('', item)">Add to Shopping List</button>-->
+    <!--    </div>-->
+    <p><b>Instructions</b></p>
+    <a [href]="recipe.recipe.source">{{recipe.recipe.source.source_recipe_url}}</a>
+    <div *ngFor="let instruction of recipe.recipe.instructions.steps">
+      <p>{{instruction.text}}</p>
+    </div>
+    <br>
+    <!--    <div *ngFor="let collectionId of recipe.collection_ids">-->
+    <!--      <p>Collection name: {{getRecipeCollectionName(collectionId)}}</p>-->
+    <!--    </div>-->
+    <mat-form-field appearance="fill">
+      <select matNativeControl id="listSelect" (change)="addNormalizedItemsToShoppingList($event.target.value)">
+        <option disabled selected>Add ingredients to list</option>
+        <option *ngFor="let list of lists" [value]="list.id">{{list.name}}</option>
+      </select>
+    </mat-form-field>
+    <br>
+<!--    <mat-form-field appearance="fill">-->
+<!--      <mat-select id="listSelect" placeholder="Add ingredients to list" (valueChange)="addNormalizedItemsToShoppingList($event.target.value)">-->
+<!--        <mat-option *ngFor="let list of lists" [value]="list.id">{{list.name}}</mat-option>-->
+<!--      </mat-select>-->
+<!--    </mat-form-field>-->
+<!--    <br>-->
+    <!--    <button mat-stroked-button color="secondary" (click)="addItemsToShoppingList()">-->
+    <!--      <mat-icon>arrow_back</mat-icon>-->
+    <!--    </button>-->
+
+  </mat-card-content>
+</mat-card>

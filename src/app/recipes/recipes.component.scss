@@ -1,0 +1,18 @@
+::ng-deep mat-icon {
+  cursor: pointer;
+}
+
+mat-toolbar {
+  justify-content: space-between;
+}
+
+.content {
+  padding: 16px;
+  flex-wrap: wrap;
+}
+
+.content > mat-card {
+  margin-bottom: 16px;
+}
+
+

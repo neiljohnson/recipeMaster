@@ -1,0 +1,159 @@
+<!--&lt;!&ndash;<app-nav-bar></app-nav-bar>&ndash;&gt;-->
+<!--&lt;!&ndash;<router-outlet></router-outlet>&ndash;&gt;-->
+
+<mat-toolbar color="primary">
+<!--  <mat-toolbar-row>-->
+<!--    <button mat-icon-button>-->
+<!--      <mat-icon>menu</mat-icon>-->
+<!--    </button>-->
+<!--    <h1>Meal Planner</h1>-->
+<!--    <span class="menu-spacer"></span>-->
+    <div>
+      <a mat-button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="'/pantry'"><mat-icon>food_bank</mat-icon> Pantry </a>
+      <a mat-button routerLinkActive="active" [routerLink]="'/recipes'"><mat-icon>bookmark</mat-icon> Recipes </a>
+      <a mat-button routerLinkActive="active" [routerLink]="'/mealPlanning'"><mat-icon>event</mat-icon> Calendar </a>
+      <a mat-button routerLinkActive="active" [routerLink]="'/shoppingList'"><mat-icon>assignment</mat-icon> Shopping List </a>
+    </div>
+<!--    <mat-menu #menu="matMenu">-->
+<!--      <button mat-menu-item>-->
+<!--        <span class="material-icons logout">-->
+<!--          login-->
+<!--          </span>-->
+<!--        <span class="logout_text">Logout</span>-->
+<!--      </button>-->
+<!--    </mat-menu>-->
+<!--  </mat-toolbar-row>-->
+</mat-toolbar>
+<!--<router-outlet></router-outlet>-->
+
+
+
+
+<!--&lt;!&ndash;&lt;!&ndash;<mat-sidenav-container>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <mat-sidenav #sidenav>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <mat-nav-list>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      <a mat-list-item [routerLink]="'/pantry'"> Pantry </a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      <a mat-list-item [routerLink]="'/recipes'"> Recipes </a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      <a mat-list-item [routerLink]="'/mealPlanning'"> Meal Planning </a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      <a mat-list-item [routerLink]="'/shoppingList'"> Shopping List </a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      &lt;!&ndash;      <a mat-list-item [routerLink]="'/create-activity'"> Create Activity </a>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      <a mat-list-item (click)="sidenav.toggle()" href="">Close</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    </mat-nav-list>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  </mat-sidenav>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <mat-sidenav-content>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <div style="height: 88vh;">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      <router-outlet></router-outlet>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  </mat-sidenav-content>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</mat-sidenav-container>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<mat-toolbar>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <mat-icon>menu</mat-icon>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  </button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <span>My App</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <span class="example-spacer"></span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <mat-icon>favorite</mat-icon>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  </button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <mat-icon>share</mat-icon>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  </button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</mat-toolbar>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;<nav aria-label="Top Toolbar" class="docs-navbar-header">&lt;!&ndash;&ndash;&gt;<a&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                                                                                         mat-button="" routerlink="/"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                                                                                         aria-label="Angular Material"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                                                                                         class="mat-focus-indicator docs-button mat-button mat-button-base"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                                                                                         tabindex="0"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                                                                                         aria-disabled="false" href="/"><span&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  class="mat-button-wrapper"><img  src="../../assets/img/homepage/angular-white-transparent.svg"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                                  alt="angular" class="docs-angular-logo"><span&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  >Material</span></span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <div mat-ripple="" class="mat-ripple mat-button-ripple"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <div class="mat-button-focus-overlay"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</a><a _ngcontent-gty-c50="" mat-button=""&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;       class="mat-focus-indicator docs-navbar-hide-small docs-button mat-button mat-button-base ng-star-inserted"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;       tabindex="0" aria-disabled="false" href="/components"><span class="mat-button-wrapper">Components</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <div mat-ripple="" class="mat-ripple mat-button-ripple"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <div class="mat-button-focus-overlay"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</a><a _ngcontent-gty-c50="" mat-button=""&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;       class="mat-focus-indicator docs-navbar-hide-small docs-button mat-button mat-button-base ng-star-inserted"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;       tabindex="0" aria-disabled="false" href="/cdk"><span class="mat-button-wrapper">CDK</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <div mat-ripple="" class="mat-ripple mat-button-ripple"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <div class="mat-button-focus-overlay"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</a>&lt;!&ndash;&ndash;&gt;<a _ngcontent-gty-c50="" mat-button=""&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;              class="mat-focus-indicator docs-navbar-hide-small docs-button mat-button mat-button-base" tabindex="0"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;              aria-disabled="false" href="/guides"><span class="mat-button-wrapper">Guides</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <div mat-ripple="" class="mat-ripple mat-button-ripple"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <div class="mat-button-focus-overlay"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <div _ngcontent-gty-c50="" class="flex-spacer"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <version-picker _ngcontent-gty-c50="">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <button aria-haspopup="true" mat-button="" aria-label="Select a version"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            class="mat-focus-indicator mat-tooltip-trigger mat-menu-trigger mat-button mat-button-base"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            aria-describedby="cdk-describedby-message-0" cdk-describedby-host=""><span class="mat-button-wrapper"> 10.1.2 <mat-icon&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      role="img" class="mat-icon notranslate material-icons mat-icon-no-color"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      aria-hidden="true">arrow_drop_down</mat-icon></span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      <div matripple="" class="mat-ripple mat-button-ripple"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      <div class="mat-button-focus-overlay"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    </button>&lt;!&ndash;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <mat-menu class="ng-tns-c43-0">&lt;!&ndash;&ndash;&gt;</mat-menu>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  </version-picker>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <theme-picker _ngcontent-gty-c50="">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <button aria-haspopup="true" mat-icon-button="" aria-label="Select a theme"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            mattooltip="Select a theme for the documentation"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            class="mat-focus-indicator mat-tooltip-trigger mat-menu-trigger mat-icon-button mat-button-base"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            aria-describedby="cdk-describedby-message-1" cdk-describedby-host=""><span class="mat-button-wrapper"><mat-icon&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      role="img" class="mat-icon notranslate material-icons mat-icon-no-color"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      aria-hidden="true">format_color_fill</mat-icon></span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      <div matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      <div class="mat-button-focus-overlay"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    </button>&lt;!&ndash;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <mat-menu xposition="before" class="">&lt;!&ndash;&ndash;&gt;</mat-menu>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  </theme-picker>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  <a _ngcontent-gty-c50="" mat-button="" href="https://github.com/angular/components" aria-label="GitHub Repository"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;     class="mat-focus-indicator docs-button docs-navbar-hide-small mat-button mat-button-base" tabindex="0"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;     aria-disabled="false"><span class="mat-button-wrapper"><img _ngcontent-gty-c50=""&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                                                                 src="../../assets/img/homepage/github-circle-white-transparent.svg"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                                                                 alt="angular" class="docs-angular-logo"> GitHub </span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <div mat-ripple="" class="mat-ripple mat-button-ripple"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <div class="mat-button-focus-overlay"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  </a><a _ngcontent-gty-c50="" mat-icon-button="" href="https://github.com/angular/components"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;         aria-label="GitHub Repository"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;         class="mat-focus-indicator docs-button docs-navbar-show-small mat-icon-button mat-button-base" tabindex="0"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;         aria-disabled="false"><span class="mat-button-wrapper"><img _ngcontent-gty-c50=""&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                                                                     src="../../assets/img/homepage/github-circle-white-transparent.svg"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                                                                     alt="angular" class="docs-angular-logo"></span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <div mat-ripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <div class="mat-button-focus-overlay"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;  </a></nav>&ndash;&gt;&ndash;&gt;-->
+
+<!--<app-nav-bar></app-nav-bar>-->
+
+<!--<ion-tabs>-->
+<!--  <ion-tab-bar slot="bottom">-->
+<!--    <ion-tab-button tab="schedule">-->
+<!--      <ion-icon name="calendar"></ion-icon>-->
+<!--      <ion-label>Schedule</ion-label>-->
+<!--      <ion-badge>6</ion-badge>-->
+<!--    </ion-tab-button>-->
+
+<!--    <ion-tab-button tab="speakers">-->
+<!--      <ion-icon name="person-circle"></ion-icon>-->
+<!--      <ion-label>Speakers</ion-label>-->
+<!--    </ion-tab-button>-->
+
+<!--    <ion-tab-button tab="map">-->
+<!--      <ion-icon name="map"></ion-icon>-->
+<!--      <ion-label>Map</ion-label>-->
+<!--    </ion-tab-button>-->
+
+<!--    <ion-tab-button tab="about">-->
+<!--      <ion-icon name="information-circle"></ion-icon>-->
+<!--      <ion-label>About</ion-label>-->
+<!--    </ion-tab-button>-->
+<!--  </ion-tab-bar>-->
+<!--</ion-tabs>-->
+
+<router-outlet></router-outlet>
+

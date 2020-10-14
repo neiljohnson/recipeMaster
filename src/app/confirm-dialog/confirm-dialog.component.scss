@@ -1,0 +1,37 @@
+
+::ng-deep .confirmDialog .mat-dialog-container {
+  padding: 15px !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
+  width: 525px;
+  border-top: 25px solid #cdcdcd !important;
+}
+
+.mat-dialog-container {
+  padding: 8px !important;
+}
+
+.mat-dialog-actions {
+  float: right;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+::ng-deep hr {
+  margin: 0 !important;
+}
+
+::ng-deep.mat-dialog-actions .gb_flat_button {
+  margin-left: 20px;
+  border: white !important;
+  outline: white !important;
+  font-size: 16px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5) !important;
+  cursor: pointer;
+}
+
+.timer {
+  font-weight: bold;
+}
+
+

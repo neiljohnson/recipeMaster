@@ -1,0 +1,80 @@
+<mat-card class="shipping-card">
+  <mat-card-header>
+  </mat-card-header>
+
+  <mat-card-content>
+    <button mat-stroked-button color="secondary" (click)="onBackButtonClicked()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <form #recipeForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="standard">
+            <!--          <label for="name">Name</label>-->
+            <input id="name" matInput placeholder="name" name="name" type="text" [(ngModel)]="model.payload.name"
+                   required>
+          </mat-form-field>
+          <!--        <mat-form-field appearance="standard">-->
+          <input #fileUpload placeholder="upload file" type="file" name="imageFile" accept="image/*"
+                 (change)="onFileUpload($event.target.files[0])">
+          <!--        </mat-form-field>-->
+          <img *ngIf="model.payload.images[0]?.url" [src]="model.payload.images[0]?.url" class="uploaded_image"/>
+          <mat-form-field appearance="standard">
+            <!--          <label for="description">Description</label>-->
+            <input id="description" matInput placeholder="description" type="text" name="description"
+                   [(ngModel)]="model.payload.description">
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <!--          <label for="ingredients">Ingredients</label>-->
+            <input matInput id="ingredients" placeholder="ingredients" type="text" name="ingredients"
+                   [(ngModel)]="model.payload.ingredients[0].text">
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <!--          <label for="instructions">Instructions</label>-->
+            <textarea matInput id="instructions" placeholder="instructions" name="instructions"
+                      [(ngModel)]="model.payload.instructions[0].text"></textarea>
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <!--          <label for="servings">Servings</label>-->
+            <input matInput id="servings" placeholder="servings" type="number" name="servings"
+                   [(ngModel)]="model.payload.servings">
+          </mat-form-field>
+
+          <mat-form-field appearance="standard">
+            <!--          <label for="sourceName">Source Name</label>-->
+            <input matInput id="sourceName" placeholder="source name" type="text" name="sourceName"
+                   [(ngModel)]="model.payload.source.display_name">
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <!--          <label for="sourceUrl">Source URL</label>-->
+            <input matInput id="sourceUrl" placeholder="source URL" type="text" name="sourceUrl"
+                   [(ngModel)]="model.payload.source.source_recipe_url">
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <!--          <label for="prepTime">Prep Time (minutes)</label>-->
+            <input matInput id="prepTime" placeholder="prep time" type="number" name="prepTime"
+                   [(ngModel)]="model.payload.durations.prep_time">
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <!--          <label for="cookTime">Cook Time (minutes)</label>-->
+            <input matInput id="cookTime" placeholder="cook time" type="number" name="cookTime"
+                   [(ngModel)]="model.payload.durations.cook_time">
+          </mat-form-field>
+          <mat-form-field>
+            <!--          <label for="collections">Collections</label>-->
+            <select matNativeControl id="collections">
+              <option *ngFor="let collection of recipeCollections"
+                      [value]="collection.collection.id">{{collection.collection.name}}</option>
+            </select>
+          </mat-form-field>
+          <!--      <mat-form-field appearance="standard">-->
+          <!--        <input matInput placeholder="collection" name="collection" [(ngModel)]="model.collection_ids">-->
+          <!--      </mat-form-field>-->
+          <br>
+          <button mat-stroked-button color="secondary" type="submit" name="submit" value="Submit">Submit</button>
+          <button mat-stroked-button color="accent" type="reset" name="submit" value="Reset">Reset</button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

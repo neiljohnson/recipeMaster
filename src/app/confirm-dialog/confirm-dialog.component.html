@@ -1,0 +1,14 @@
+<div mat-dialog-title>
+  {{model.title}}
+</div>
+
+<div mat-dialog-content>
+  <p>{{model.message}}</p>
+</div>
+
+<hr class="mat-divider" />
+
+<div mat-dialog-actions class="mat-dialog-actions">
+  <button class="gb_flat_button" (click)="onConfirm()">{{model.confirmText}}</button>
+  <button *ngIf="model.dismissText" class="gb_flat_button" (click)="onDismiss()">{{model.dismissText}}</button>
+</div>
